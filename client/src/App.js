@@ -18,8 +18,7 @@ function App() {
       },
       withCredentials: true,
       url: 'http://localhost:4000/register'
-    })
-    .then((res) => console.log(res));
+    }).then((res) => console.log(res));
   };
 
   const login = () => {
@@ -30,7 +29,7 @@ function App() {
         password: loginPassword
       },
       withCredentials: true,
-      url: 'http://localhost:4000/register'
+      url: 'http://localhost:4000/login'
     })
     .then((res) => console.log(res));
   };
@@ -41,8 +40,8 @@ function App() {
       withCredentials: true,
       url: 'http://localhost:4000/user'
     }).then((res) => {
-      setData(res.data);
-      console.log(res.data)
+      setData(res);
+      console.log(res)
     });
   };
 
@@ -51,15 +50,15 @@ function App() {
 
       <div>
         <h1>Register</h1>
-        <input placeholder='username' onChange={e => setRegisterUsername(e.target.value)} />
-        <input placeholder='password' onChange={e => setRegisterPassword(e.target.value)} />
+        <input placeholder='username' onChange={(e) => setRegisterUsername(e.target.value)} />
+        <input placeholder='password' onChange={(e) => setRegisterPassword(e.target.value)} />
         <button onClick={register} >Submit</button>
       </div>
 
       <div>
         <h1>Login</h1>
-        <input placeholder='username' onChange={e => setLoginUsername(e.target.value)} />
-        <input placeholder='password' onChange={e => setLoginPassword(e.target.value)} />
+        <input placeholder='username' onChange={(e) => setLoginUsername(e.target.value)} />
+        <input placeholder='password' onChange={(e) => setLoginPassword(e.target.value)} />
         <button onClick={login} >Submit</button>
       </div>
 
